@@ -109,16 +109,29 @@
 // …
 // 9 x 10 = 90
 
-let rdo = "";
-for (i = 1; i <= 10; i++) {
-  rdo += +9 * i;
-  rdo += "\n";
-}
-alert(rdo);
+// let rdo = "";
+// for (i = 1; i <= 10; i++) {
+//   rdo += +9 * i;
+//   rdo += "\n";
+// }
+// alert(rdo);
 
 // 10. Crea un programa que muestre los primeros ocho números pares: 2 4 6 8 10 12 14 16.
+// let rdo = "";
+// for (i = 2; i <= 16; i = i + 2) {
+//   rdo += i;
+//   rdo += "\n";
+// }
+// alert(rdo);
 
 // 11. Crea un programa que muestre los números del 15 al 5, descendiendo.
+
+// let rdo = "";
+// for (i = 15; i >= 5; i--) {
+//   rdo += i;
+//   rdo += "\n";
+// }
+// alert(rdo);
 
 // 12. Crea un programa que pida al usuario el ancho (por ejemplo, 4) y el alto (por ejemplo, 3) y
 // muestre un rectángulo formado por esa cantidad de asteriscos:
@@ -126,15 +139,63 @@ alert(rdo);
 // ****
 // ****
 
+// let ancho = parseInt(prompt("Introduce el ancho"));
+// let alto = parseInt(prompt("Introduce el alto"));
+// let rdo = "";
+// for (i = 1; i <= alto; i++) {
+//   let linea = "";
+//   for (j = 1; j <= ancho; j++) {
+//     linea += "*";
+//   }
+//   rdo += linea;
+//   rdo += "\n";
+// }
+// alert(rdo);
+
 // 13. Lo mismo que el ejercicio anterior, pero esta vez mostrará una diagonal con otro carácter:
 // O***
 // *O**
 // **O*
 
+// let ancho = parseInt(prompt("Introduce el ancho"));
+// let alto = parseInt(prompt("Introduce el alto"));
+// let rdo = "";
+// for (i = 1; i <= alto; i++) {
+//   let linea = "";
+//   for (j = 1; j <= ancho; j++) {
+//     if (i == j) {
+//       linea += "0";
+//     } else {
+//       linea += "*";
+//     }
+//   }
+
+//   rdo += linea;
+//   rdo += "\n";
+// }
+// alert(rdo);
+
 // 14. Crea un programa que pida al usuario su identificador y contraseña de manera indefinida hasta
 // que introduzca el identificador “alibaba” y la contraseña “sesamo”. Si al tercer intento no ha
 // introducido los datos correctos, mostrará un mensaje diciendo que el identificador/contraseña no
 // son correctos.
+
+// let bandera = false;
+// contador = 0;
+// while (!bandera) {
+//   let user = prompt("Introduce usuario").toLocaleLowerCase();
+//   let pw = prompt("Introduce contraseña").toLocaleLowerCase();
+//   if (user == "alibaba" && pw == "sesamo") {
+//     alert("Contraseña correcta");
+//     bandera = true;
+//   } else {
+//     contador++;
+//   }
+//   if (contador == 3) {
+//     bandera = true;
+//     alert("identificador/contraseña no son correctos");
+//   }
+// }
 
 // 15. Crea un "calculador de cuadrados": pedirá al usuario un número y mostrará su cuadrado. Se
 // repetirá mientras el número introducido no sea cero.
