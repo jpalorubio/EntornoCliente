@@ -111,7 +111,7 @@
 
 // let rdo = "";
 // for (i = 1; i <= 10; i++) {
-//   rdo += +9 * i;
+//   rdo += "9 x " + i + " = " + 9 * i;
 //   rdo += "\n";
 // }
 // alert(rdo);
@@ -199,12 +199,26 @@
 
 // 15. Crea un "calculador de cuadrados": pedirá al usuario un número y mostrará su cuadrado. Se
 // repetirá mientras el número introducido no sea cero.
+// let bandera = false;
+// while (!bandera) {
+//   let num = parseInt(prompt("Introduce un numero"));
+//   if (num == 0) {
+//     alert("Has introducido un 0, se cerrara el programa");
+//     bandera = true;
+//   } else {
+//     alert("El cuadrado de " + num + " es " + num * num);
+//   }
+// }
 
 // 16. Escribe un código que genere una excepción (por ejemplo, llamar a una función que no exista).
 // Capturar el error y mostrar un mensaje de aviso.
 
 // 17. Crea un programa que contenga un bucle sin fin que muestra el mensaje "Hola" con alert.
 // Cuando llegue a 10 vueltas, se detendrá.
+
+// for (let i = 1; i <= 10; i++) {
+//   alert("Hola " + i);
+// }
 
 // 18. A partir del siguiente código html:
 // <!DOCTYPE html><html lang="es">
