@@ -15,12 +15,21 @@ function crearTabla() {
 
   for (let col = 1; col <= 7; col++) {
     rdo += "<td>" + String.fromCharCode(letraascii++) + "</td>";
-    // for (let j = 1; i <= 8; j++) {
-    //   rdo += "<tr>" + j + "</tr>";
-    // }
+  }
+  rdo += "</tr>";
+  for (let filas = 1; filas <= 8; filas++) {
+    rdo += "<tr>";
+    for (let columnas = 1; columnas <= 8; columnas++) {
+      if (columnas == 1) {
+        rdo += "<td>" + filas + "</td>";
+      } else {
+        rdo += "<td></td>";
+      }
+    }
+    rdo += "</tr>";
   }
 
-  rdo += "<tr></table>";
+  rdo += "</table>";
 
   document.getElementById("tabla").innerHTML = rdo;
 }
