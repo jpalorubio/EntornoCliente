@@ -11,7 +11,7 @@
 //td los cuadritos de cada fila.
 function crearTabla() {
   let letraascii = 65;
-  let rdo = "<table><tr><td></td>";
+  let rdo = "<table><tr><td>&nbsp;&nbsp;</td>";
 
   for (let col = 1; col <= 7; col++) {
     rdo += "<td>" + String.fromCharCode(letraascii++) + "</td>";
