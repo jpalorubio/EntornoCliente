@@ -97,22 +97,127 @@
 
 // alert(rdo);
 
-// Escribe un script para generar un array de dos dimensiones (matriz). Se le pedirá al usuario
+// 6.Escribe un script para generar un array de dos dimensiones (matriz). Se le pedirá al usuario
 // primero el tamaño de la matriz (que será cuadrada):
-function crearTabla() {
-  let tamaño = parseInt(prompt("Introduce el tamaño de la matriz cuadrada"));
-  let rdo = "<table border=1>";
-  for (let filas = 1; filas <= tamaño; filas++) {
-    rdo += "<tr>";
-    for (let columnas = 1; columnas <= tamaño; columnas++) {
-      let valor = prompt(
-        "Introduce el valor para la fila " + filas + " y la columna " + columnas
-      );
-      rdo += "<td>&nbsp;&nbsp;" + valor + "&nbsp;&nbsp;</td>";
-    }
-    rdo += "</tr>";
-  }
-  rdo += "</table>";
+// function crearTabla() {
+//   let tamaño = parseInt(prompt("Introduce el tamaño de la matriz cuadrada"));
+//   let rdo = "<table border=1>";
+//   for (let filas = 1; filas <= tamaño; filas++) {
+//     rdo += "<tr>";
+//     for (let columnas = 1; columnas <= tamaño; columnas++) {
+//       let valor = prompt(
+//         "Introduce el valor para la fila " + filas + " y la columna " + columnas
+//       );
+//       rdo += "<td>&nbsp;&nbsp;" + valor + "&nbsp;&nbsp;</td>";
+//     }
+//     rdo += "</tr>";
+//   }
+//   rdo += "</table>";
 
-  document.getElementById("tabla").innerHTML = rdo;
+//   document.getElementById("tabla").innerHTML = rdo;
+// }
+
+// 7. Dado un array con elementos repetidos, escribe el código para que saber cuál es el elemento que
+// más veces aparece en el array.
+
+// let miArray = [
+//   "Madrid",
+//   "Zafra",
+//   "Madrid",
+//   "Barcelona",
+//   "Zafra",
+//   "Zafra",
+//   "Sevilla",
+//   "Badajoz",
+//   "Badajoz",
+// ];
+// let repetidos = []; //Asociativo
+// let rdo = "";
+// for (const valor of miArray) {
+//   //for of para devolver los valores de dentro
+//   if (repetidos[valor] == undefined) {
+//     repetidos[valor] = 1;
+//   } else {
+//     repetidos[valor] += 1;
+//   }
+// }
+// for (const indice in repetidos) {
+//   //for in para devolver el indice
+//   rdo += "Ciudad " + indice + " Repeticiones: " + repetidos[indice] + "\n";
+// }
+
+// let valorMaximo = 0;
+// let indiceMaximo = 0;
+// for (const indice in repetidos) {
+//   if (repetidos[indice] > valorMaximo) {
+//     valorMaximo = repetidos[indice];
+//     indiceMaximo = indice;
+//   }
+// }
+// rdo +=
+//   "El elemento con mas repeticiones es " +
+//   indiceMaximo +
+//   " con " +
+//   valorMaximo +
+//   " repeticiones";
+// alert(rdo);
+// 8. Modificar el ejercicio anterior, de tal forma que muestra en la consola el número de veces que
+// aparece cada item en el array, pero ordenamos de mayor a menor.
+// Para esta actividad es probable que necesitéis saber cómo eliminar un elemento de un array
+// asociativo. Con el método “slice”, en array normales se puede hacer, pero, ¿funciona igual en
+// array asociativos? En caso de que no funcione, ¿se puede eliminar un elemento de un array
+// asociativo? ¿como?
+let miArray = [
+  "Madrid",
+  "Zafra",
+  "Madrid",
+  "Barcelona",
+  "Zafra",
+  "Zafra",
+  "Sevilla",
+  "Badajoz",
+  "Badajoz",
+];
+let repetidos = []; //Asociativo
+let elementos = 0;
+let rdo = "";
+for (const valor of miArray) {
+  //for of para devolver los valores de dentro
+  if (repetidos[valor] == undefined) {
+    repetidos[valor] = 1;
+    elementos++;
+  } else {
+    repetidos[valor] += 1;
+  }
 }
+for (const indice in repetidos) {
+  //for in para devolver el indice
+  rdo += "Ciudad " + indice + " Repeticiones: " + repetidos[indice] + "\n";
+}
+
+let arrayOrdenado = [];
+
+while (elementos > 0) {
+  let valorMaximo = 0;
+  let indiceMaximo = 0;
+  for (const indice in repetidos) {
+    if (repetidos[indice] > valorMaximo) {
+      valorMaximo = repetidos[indice];
+      indiceMaximo = indice;
+    }
+  }
+  arrayOrdenado[indiceMaximo] = valorMaximo;
+  delete repetidos[indiceMaximo];
+  elementos--;
+}
+
+for (const indice in arrayOrdenado) {
+  rdo +=
+    "Indice Ordenado " +
+    indice +
+    " Valor ordenado: " +
+    arrayOrdenado[indice] +
+    "\n";
+}
+
+alert(rdo);
