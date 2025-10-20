@@ -1,3 +1,5 @@
+//CADENAS
+
 // Actividad 1 - Cadenas
 // 1.Crear una función que pida una cadena por teclado y muestre su tamaño
 
@@ -57,7 +59,7 @@ function parteCadena() {
   let posicion = mensaje.indexOf("tal"); // posición = 9 (donde empieza la cadena tal)
   let porcion = mensaje.substring(posicion); // porcion = "tal yo bien"
   let rdo =
-    "<h1>Hola que tal yo bien a partir de la palabra tal que daria asi: " +
+    "<h1>Hola que tal yo bien a partir de la palabra tal quedaría asi: " +
     porcion +
     "</h1>";
 
@@ -81,4 +83,46 @@ function corteCadena() {
   }
 
   document.getElementById("resultadoej5").innerHTML = rdo;
+}
+
+// Actividad 3 – Cadenas
+// Crear una función que tenga como parámetro de entrada un DNI y le ponga un 0 o no al principio según
+// corresponda (si tiene 7 caracteres, hay que ponerle un 0 delante).
+
+function entradaDNI() {
+  let dni = prompt("Introduce un dni");
+  let dninuevo = leerDNI(dni);
+  let rdo = "";
+  alert(dninuevo);
+  rdo += "<h1>Tu dni es: " + dninuevo + "</h1>";
+  document.getElementById("resultadoej6").innerHTML = rdo;
+}
+
+function leerDNI(dni) {
+  let dniCompleto = dni.padStart(9, "0");
+  return dniCompleto;
+}
+//ARRAYS
+// Actividad 1 – Arrays
+// 1. Crea un array de elementos y muestra dichos elementos por pantalla separados por "#", ahora haz lo
+// mismo con uno bidimensional:
+// let anidado1 = ["anidado1", "anidado2", "anidado3"]
+// let anidado2 = ["a1", "a2", "a3"]
+// let matriz = [anidado1, anidado2]
+// Recorre la matriz y muestra los elementos separados por “#”, mostrando el mensaje: “Indice X:
+// elem1#elem2#elem3”
+
+function arrayElementos() {
+  let anidado1 = ["anidado1", "anidado2", "anidado3"];
+  let anidado2 = ["a1", "a2", "a3"];
+  let matriz = [anidado1, anidado2];
+
+  let anidadoAux = anidado1.join("#");
+  alert(anidadoAux);
+  let rdo = "";
+  for (const indice in matriz) {
+    rdo += "Indice " + indice + ":" + matriz[indice].join("#") + "\n";
+  }
+
+  alert(rdo);
 }
