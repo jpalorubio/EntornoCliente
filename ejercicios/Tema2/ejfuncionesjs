@@ -126,3 +126,162 @@ function arrayElementos() {
 
   alert(rdo);
 }
+
+// Actividad 2 – Arrays
+// 1. Mostrar los elementos de un array del final al principio usando pop.
+function mostrarPop() {
+  let array = ["coche", "moto", "bicicleta", "furgoneta", "camion", "bus"];
+  let array2 = [];
+  let rdo = "";
+  let longitud = array.length;
+  for (let i = 0; i < longitud; i++) {
+    array2[i] = array.pop();
+  }
+
+  for (const valor of array2) {
+    rdo += valor + "\n";
+  }
+
+  alert(rdo);
+}
+
+// 2. Nos dan un array de frutas [“banana”, “naranja”, “mango”, “limon”]. Crear un script que pregunte al
+// usuario qué fruta quiere buscar en el array, si no existe dicha fruta mostrará “Esta fruta no existe en el
+// array” en caso contrario mostrará “Sí hay aguacate en el array”. La fruta se puede poner en mayúsculas y
+// minúsculas y la seguirá encontrando.
+
+function mostrarFruta() {
+  let frutas = ["banana", "naranja", "mango", "limon"];
+  let pregunta = prompt("Que fruta quieres buscar");
+  let rdo = "";
+
+  //Forma con la funcion includes.
+  if (frutas.includes(pregunta.toLocaleLowerCase())) {
+    alert("Si hay " + pregunta + " en el array");
+  } else {
+    alert("Esta fruta no existe en el array");
+  }
+
+  //FORMA SIN FUNCIONES:
+  // let control = false;
+  // for (const fruta of frutas) {
+  //   if (fruta == pregunta.toLocaleLowerCase()) {
+  //     control = true;
+  //   }
+  // }
+
+  // if (control) {
+  //   rdo += "Si hay " + pregunta + " en el array";
+  // } else {
+  //   rdo += "Esta fruta no existe en el array";
+  // }
+
+  // alert(rdo);
+}
+
+// Actividad 3 – Arrays
+// 1. Si tenemos una cadena en minúsculas “miel”. ¿Cómo podemos transformarla en una cadena con la
+// primera letra en mayúsculas(Miel)?
+
+function primeraMayus() {
+  let cadena = "miel";
+  let primeraletra = cadena[0].toLocaleUpperCase();
+  let resto = cadena.slice(1);
+  alert(primeraletra + resto);
+
+  // let cadena2 = "";
+  // for (i = 0; i < cadena.length; i++) {
+  //   if (i == 0) {
+  //     cadena2 += cadena[i].toLocaleUpperCase();
+  //   } else {
+  //     cadena2 += cadena[i];
+  //   }
+  // }
+  // alert(cadena2);
+}
+// 2. Nos dan la lista de la compra en un array([“Leche”, “Café”, “Té”, “Miel”). Crea un botón para añadir
+// “Carne” al principio de la lista de la compra y “Azúcar” al final de la lista. Si ya se ha añadido “Carne” o
+// “Azúcar” no se vuelve a añadir, se muestra el mensaje “Ya se ha añadido este producto a la lista de la
+// compra”.
+// Crea un botón “Alergias” que pida un producto al que eres alérgico y lo elimina de la lista de la compra,
+// indicando “He eliminado X producto de la cesta porque eres alérgico”, si no se encuentra el producto en
+// la cesta, mostrará “No existen alergias en la cesta”.
+// Crea un botón “Modificar” que pida un producto a buscar y si lo encuentra modifique su valor, por
+// ejemplo, que busque “Té” y te permita modificarlo a “Té verde”.
+let lista = ["Leche", "Café", "Té", "Miel"];
+
+function addLista() {
+  let productoInicio = "Carne";
+  let productoFinal = "Azucar";
+
+  if (lista.includes(productoInicio)) {
+    alert("Ya se ha añadido este producto a la lista");
+  } else {
+    lista.unshift(productoInicio);
+  }
+
+  if (lista.includes(productoFinal)) {
+    alert("Ya se ha añadido este producto a la lista");
+  } else {
+    lista.push(productoFinal);
+  }
+
+  alert(lista);
+}
+
+function alergias() {
+  let proAlergia = prompt("Introduce un producto al que eres alergico");
+  let contador = 0;
+
+  if (lista.includes(proAlergia)) {
+    lista.splice(lista.indexOf(proAlergia), 1);
+    contador++;
+    alert(
+      "He eliminado" + contador + "producto de la cesta porque eres alérgico"
+    );
+  } else {
+    alert("No existen alergias en la cesta");
+  }
+}
+
+function modificar() {
+  let proModificar = prompt("Introduce el producto que quieres modificar");
+
+  if (lista.includes(proModificar)) {
+    let nuevoproducto = prompt("Introduce tu nuevo producto");
+    lista[lista.indexOf(proModificar)] = nuevoproducto;
+
+    alert("Producto modificado, tu cesta ahora queda asi\n" + lista);
+  } else {
+    alert("No existe el artículo que quieres modificar en la cesta");
+  }
+}
+
+//EjercicioPrueba
+//Cadena "HOLA QUE TAL" transformar a "HOLA#QUE#TAL"
+//Recorriendo la cadena
+//Con un for usando split y sin join
+//Usando split y join
+
+function prueba2() {
+  let cadena = "HOLA QUE TAL";
+  let cadena2 = "";
+  for (let i = 0; i < cadena.length; i++) {
+    if (cadena[i] != " ") {
+      cadena2 += cadena[i];
+    } else {
+      cadena2 += "#";
+    }
+  }
+  alert(cadena2);
+
+  let cadena3 = cadena.split(" ");
+
+  let rdo = "";
+  for (const caracter of cadena) {
+    if (rdo != "") {
+      cadena3 += caracter;
+    } else cadena3 += "#";
+  }
+  alert(rdo);
+}
