@@ -1,0 +1,32 @@
+// 	"for in facil": {
+// 		"scope": "javascript",
+// 		"prefix": "jprforin",
+// 		"body": [
+// 			"for (const $1 in $2) {",
+// 				"\t$3",
+// 			"}"
+// 		],
+// 		"description": "for in de un array"
+// 	},
+
+// 	"for of facil": {
+// 		"scope": "javascript",
+// 		"prefix": "jprforof",
+// 		"body": [
+// 			"for (const $1 of $2) {",
+// 				"\t$3",
+// 			"}"
+// 		],
+// 		"description": "for of de un array"
+// 	},
+
+// 	"Generar random": {
+// 		"scope": "javascript",
+// 		"prefix": "jprrandom",
+// 		"body": [
+// 			"let cantidadElementos=(max-min)+1",
+// 			"let aleatorio=Math.floor(Math.random()*(cantidadElementos)+inicio)"	
+// 		],
+// 		"description": "Generar un random"
+// 	}
+// }
